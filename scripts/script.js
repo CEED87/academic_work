@@ -1,3 +1,20 @@
+// Task 1.
+
+var btnDelete = document.querySelectorAll('.secondary-content');
+var ulList = document.querySelector('ul');
+
+    btnDelete.forEach(function(elem) {
+        elem.addEventListener('click',function() {
+            elem.parentElement.remove();
+            if (ulList.firstElementChild === null) {
+                var span = document.createElement('span');
+                span.textContent = 'Empty to-do';
+                ulList.appendChild(span);
+            }
+    });  
+});
+
+ 
 /** Task3 */
 
 var infoList = [{
