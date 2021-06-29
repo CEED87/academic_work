@@ -76,7 +76,7 @@ var imgLable = divLable.querySelectorAll('img');
 
 divLable.style.display = 'none';
 
-select.addEventListener('click', function () {
+select.addEventListener('change', function () {
     for (var i = 0; i < infoList.length; i++) {
         if (Number(select.value) === infoList[i].id) {
             for (var l = 0; l < imgLable.length; l++) {
@@ -157,7 +157,7 @@ var input = document.querySelector('input');
 input.addEventListener('input', function () {
     list.innerHTML = '';
     for (var i = 0; i < searchList.length; i++) {
-        if (input.value === searchList[i].charAt(0)) {
+        if (input.value === searchList[i].substr(0, input.value.length)) {
             var newLi = document.createElement('li');
             newLi.textContent = searchList[i];
             list.appendChild(newLi);
